@@ -1,0 +1,43 @@
+.user-info{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255,0.15);
+}
+
+.user-wrapper{
+    display: flex;
+
+    img{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+
+    .info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 10px;
+
+        p{
+            font-size: 15px;
+        }
+
+        span{
+            font-size: 10px;
+        }
+    }
+}
+
+.icons{
+    display: flex;
+    align-items: center;
+
+    img{
+        width: 25px;
+        height: 25px;
+        filter: invert(90%);
+        margin-left: 10px;
+    }
+}
