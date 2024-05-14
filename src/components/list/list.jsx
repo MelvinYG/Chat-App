@@ -1,4 +1,5 @@
 import UserInfo from './userInfo/userInfo';
+import ChatList from './chatList/chatList';
 import './list.css';
 
 const List = () =>{
@@ -6,6 +7,7 @@ const List = () =>{
         <>
         <div className="list">
             <UserInfo />
+            <ChatList></ChatList>
         </div>
         </>
     )

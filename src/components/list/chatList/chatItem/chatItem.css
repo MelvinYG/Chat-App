@@ -1,0 +1,34 @@
+.chat-item{
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+
+    img{
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+    }
+
+    .texts{
+        flex: 1;
+        padding-left: 10px;
+
+        .user-name{
+            font-size: 13px;
+            background-color: transparent;
+        }
+
+        p{
+            font-size: 10px;
+            font-weight: 300;
+        }
+    }
+
+    .notification{
+        font-size: 8px;
+        background-color: #1daa61;
+        padding: 5px;
+        border-radius: 50%;
+    }
+
+}
