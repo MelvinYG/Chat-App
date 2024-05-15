@@ -15,7 +15,6 @@
         img{
             width: 25px;
             height: 25px;
-            filter: invert(90%);
             cursor: pointer;
         }
 }
@@ -41,6 +40,6 @@
     .recent-chats{
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 20px;
     }
 }

@@ -12,6 +12,9 @@
     .texts{
         flex: 1;
         padding-left: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
 
         .user-name{
             font-size: 13px;
@@ -20,7 +23,7 @@
 
         p{
             font-size: 10px;
-            font-weight: 300;
+            /* font-weight: 300; */
         }
     }
 
