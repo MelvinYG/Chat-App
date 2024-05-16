@@ -1,3 +1,9 @@
 .chat-center{
-    
+    display: flex;
+    overflow-y: scroll;
+    scrollbar-width: 2px;
+    scrollbar-color: rgb(54, 55, 57) rgba(68, 69, 72, 0.7);
+    padding: 10px ;
+    flex-direction: column;
+    gap: 15px;
 }

@@ -1,0 +1,43 @@
+.message{
+    display: flex;
+    max-width: 70%;
+    gap: 15px;
+    padding: 8px;
+    border-radius: 5px;
+    
+    .profile-pic{
+         width: 25px;
+         height: 25px;
+         border-radius: 50%;
+    }
+
+    p{
+        font-size: 14px;
+    }
+
+    span{
+        font-size: 10px;
+    }
+
+    .shared-img{
+        width: 400px;
+        height: 200px;
+        border: 1px solid rgba(255, 255, 255,0.15);
+        border-radius: 5px;
+        background-color: #444;
+        display: flex;
+        align-items: center;
+    
+        img{
+            max-width: 100%;
+            max-height: 100%; 
+            display: block;
+            margin: auto;
+        }  
+    }
+}
+
+.owns{
+    align-self: flex-end;
+    background-color: rgba(83, 131, 215,0.6);
+}
