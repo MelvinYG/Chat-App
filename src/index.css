@@ -29,3 +29,27 @@ body{
   
   display: flex;
 }
+
+/* Global styling for button */
+button{
+  flex: 1;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+.danger{
+  background-color: rgba(215,86,83,0.6);
+}
+.danger:hover{
+  background-color: rgba(215,86,83,1);
+}
+.primary{
+  background-color: rgba(83, 131, 215,0.6);
+}
+
+.primary:hover{
+  background-color: rgba(83, 131, 215,1);
+}

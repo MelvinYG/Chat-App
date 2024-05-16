@@ -23,7 +23,6 @@
         display: flex;
         flex: 1;
         background-color: rgba(68, 69, 72, 0.7);
-        /* backdrop-filter: blur(10px); */
         border-radius: 8px;
         padding: 4px;
 
