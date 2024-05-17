@@ -8,12 +8,16 @@ const LoginSection = () => {
         setVisiblePassword(prev => !prev);
     }
 
+    function handleLogin(event){
+        event.preventDefault();
+    }
+
     return (
         <>
             <div className="login-section border-box">
                 <div className="login-container">
                     <h3>Welcome back</h3>
-                    <form action="apple.html" className="input-container">
+                    <form onSubmit={handleLogin} className="input-container">
                         <input type="email" placeholder='Email' className='other-input' />
                         <div className="password-box">
                             <input type={visiblePassword ? "text" : "password"} placeholder='Password' />
