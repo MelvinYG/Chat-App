@@ -1,5 +1,8 @@
 import { useState } from 'react';
-import './loginSignupSection.css'
+import './loginSignupSection.css';
+import { toast } from 'react-toastify';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import {auth} from '/src/lib/firebase.js';
 
 const SignupSection = () => {
     const [visiblePassword, setVisiblePassword] = useState(false);
@@ -14,7 +17,13 @@ const SignupSection = () => {
 
         const {username, email, password} = Object.fromEntries(formData);
 
-        console.log(username, email, password);
+        try{
+            const res = await createUserWithEmailAndPassword(auth,email,password); 
+            console.log(res);
+        }catch(err){
+            console.log(err);
+            toast.error(err);
+        }
     }
 
     return (
