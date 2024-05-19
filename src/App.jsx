@@ -2,6 +2,7 @@ import List from './components/list/list';
 import Chat from './components/chat/chat';
 import Detail from './components/detail/detail';
 import Login from './components/login/login';
+import Notification from './components/notification/notification';
 import './index.css';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Login></Login>
         }
       </div>
+      <Notification></Notification>
     </>
   )
 }
