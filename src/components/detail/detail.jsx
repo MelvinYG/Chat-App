@@ -1,3 +1,4 @@
+import { auth } from '../../lib/firebase';
 import './detail.css'
 import Options from './options/options';
 
@@ -17,7 +18,7 @@ const Detail = () => {
                     <Options value={"Shared Files"} icon="./document.png"></Options>
                     <div className='detail-bottom'>
                         <button className='danger'>Block User</button>
-                        <button className='primary'>Logout</button>
+                        <button className='primary' onClick={()=> auth.signOut()}>Logout</button>
                     </div>
                 </div>
             </div >

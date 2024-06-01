@@ -36,10 +36,21 @@ const SignupSection = () => {
 
         const { username, email, password } = Object.fromEntries(formData);
 
+        // VALIDATE INPUTS
+        if (!username || !email || !password){
+            setLoading(false);
+            return toast.warn("Please enter inputs!");
+        }
+        if (!avatar.file){ 
+            setLoading(false);
+            return toast.warn("Please upload an avatar!");
+        }
         try {
             const res = await createUserWithEmailAndPassword(auth, email, password);
 
             const imgURL = await upload(avatar.file);
+
+            console.log(res);
 
             // Add a new document in collection "users" and then to chats
             await setDoc(doc(database, "users", res.user.uid), {
@@ -57,7 +68,7 @@ const SignupSection = () => {
             toast.success("SignUp successful");
         } catch (err) {
             toast.error(err.message);
-        }finally{
+        } finally {
             setLoading(false);
         }
     }
