@@ -41,4 +41,71 @@
         flex-direction: column;
         gap: 20px;
     }
+
+    .add-user-div{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(68, 69, 72);
+        padding: 20px;
+        gap: 10px;
+        width: 300px;
+
+        .search-user{
+            display: flex;
+            gap: 10px;
+
+            .search-field{
+                flex: 2;
+            }
+
+            input{
+                /* background-color: transparent; */
+                border: none;
+                background-color: rgba(114, 115, 119, 0.473);
+                outline: none;
+                padding: 5px;
+                color: white;
+            }
+
+            button{
+                flex: 1;
+            }
+        }
+        .user-searchlist{
+
+            .user-item{
+                display: flex;
+                gap: 10px;
+
+                .user-details{
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+                    font-size: 12px;
+                    flex: 2;
+
+                    .img-container{
+                        height: 30px;
+                        width: 30px;
+                        
+                        img{
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+
+                .btn{
+                    flex: 1;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
 }
