@@ -1,8 +1,6 @@
-# React + Vite
+# Heyya Chat Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the "Heyya" chat application built using React for front-end and Firebase anf firestore of backend.
+Current features include text and image messaging and great chat filtering, user block and un-block etc.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+More improvements and updates would be added soon
