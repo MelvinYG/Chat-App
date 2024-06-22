@@ -1,24 +1,29 @@
+import { useUserStore } from '../../../../lib/useStore';
 import './message.css';
 
 const Message = (prop) => {
-    const owns = prop.owns === "owner";
-    const imgType = prop.type === 'img';
+
+    const {currentUser} = useUserStore();
+    const img = prop.img;
+    const message = prop.message;
+    const owns = message.senderId.id === currentUser.id ? true: false;
+    const imgType = message.img ? true : false;
 
     return (
         <>
             <div className={owns ? 'message owns' : 'message'}>
                 {!owns && (
-                    <img src="./avatar.jpg" alt="" className='profile-pic' />
+                    <img src={message.senderId.avatar || "./avatar.jpg"} alt="" className='profile-pic' />
                 )}
                 {!imgType && (
                     <div className="texts">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero magnam beatae blanditiis numquam ex tempore explicabo exercitationem modi est corrupti.</p>
-                        <span>1 min ago</span>
+                        <p>{message.message}</p>
+                        {/* <span>{message}</span> */}
                     </div>)
                 }
                 {imgType && (
                     <div className="shared-img">
-                        <img src="./wallpaper-3.jpg" alt='' />
+                        <img src={message.img} alt='' />
                     </div>
                 )}
             </div>

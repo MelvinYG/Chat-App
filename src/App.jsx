@@ -8,10 +8,12 @@ import { useEffect } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './lib/firebase';
 import { useUserStore } from './lib/useStore';
+import { useChatStore } from './lib/chatStore';
 
 function App() {
 
   const {currentUser, isLoading, fetchUserInfo} = useUserStore();
+  const {chatId} = useChatStore();
 
   useEffect(() => {
     const unSub = onAuthStateChanged(auth, (user) => {
@@ -35,8 +37,8 @@ function App() {
         {currentUser ?
           <>
             <List></List>
-            <Chat></Chat>
-            <Detail></Detail>
+            {chatId && <Chat></Chat>}
+            {chatId && <Detail></Detail>}
           </>
           :
           <Login></Login>

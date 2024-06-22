@@ -18,6 +18,10 @@
         width: 25px;
         height: 25px;
         cursor: pointer;
+        
+        &.disabled{
+            pointer-events: none;
+        }
     }
 
     .emoji{
@@ -28,6 +32,7 @@
             bottom: 40px;
             left: 0;
         }
+        
     }
 
     .attachment-box{
@@ -57,5 +62,9 @@
                 background-color: rgba(68, 69, 72, 0.696);
             }
         }
+    }
+
+    :disabled{
+        cursor: not-allowed;
     }
 }

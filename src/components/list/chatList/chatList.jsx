@@ -9,6 +9,7 @@ const ChatList = () => {
 
     const { currentUser } = useUserStore();
     const [chats, setChats] = useState([]);
+    const [searchInput, setSearchInput] = useState("");
 
     useEffect(() => {
         const unsub = onSnapshot(doc(database, "userchats", currentUser.id), async (res) => {
@@ -35,10 +36,10 @@ const ChatList = () => {
     // -------------------------- Above logic to update the userchat list -------------------------- //
 
     // -------------------------- Below logic for adding user ----------------------- //
-    const [addMode, setAddMobe] = useState(false);
+    const [addMode, setAddMode] = useState(false);
 
     function addHandler() {
-        setAddMobe(prev => !prev);
+        setAddMode(prev => !prev);
     }
 
     const [user, setUser] = useState(null);
@@ -60,6 +61,8 @@ const ChatList = () => {
             console.error("Error searching user:", err);
         }
     }
+
+    
 
     // ------------------- Adding user to the chatlist -------------------------- //
 
@@ -93,11 +96,16 @@ const ChatList = () => {
                     updatedAt: Date.now(),
                 })
             });
+            setAddMode(prev => !prev);
 
         }catch (err) {
             console.log(err);
         }
     }
+
+    // Search filter
+
+    const filteredChats = chats.filter((chat) => chat.user.username.toLowerCase().includes(searchInput.toLowerCase()));
 
     return (
         <>
@@ -105,7 +113,7 @@ const ChatList = () => {
                 <div className="search">
                     <div className="search-bar">
                         <img src="./search.png" alt="" />
-                        <input type="text" placeholder='Search' />
+                        <input type="text" placeholder='Search' onChange={(event) => {setSearchInput(event.target.value)}}/>
                     </div>
                     <img src={addMode ? "./minus.png" : "./plus.png"} onClick={addHandler} alt="" />
                     {addMode ? (<div className="add-user-div">
@@ -130,7 +138,7 @@ const ChatList = () => {
                 </div>
                 {/* List of recent chats */}
                 <div className="recent-chats">
-                    {chats.length > 0 && chats.map((chat, index) => (
+                    {filteredChats.length > 0 && filteredChats.map((chat, index) => (
                         <ChatItem className="item" key={index} chat={chat}></ChatItem>
                     ))}
                 </div>
